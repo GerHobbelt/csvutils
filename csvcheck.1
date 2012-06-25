@@ -1,0 +1,44 @@
+.TH CSVCHECK "1" "02 June 2007" "" "csvutils"
+.SH NAME
+csvcheck \- check CSV files for malformed data 
+.SH SYNOPSIS
+.nf
+.ft B
+csvcheck [OPTION]... [FILE]...
+.LP
+.fi
+.SH DESCRIPTION
+.ft
+.ft
+.fi
+Read CSV data from provided files or standard input and determine if CSV data is properly formed and if not then display the position of the first malformed byte.  CSV data is considered malformed when a quote exists outside of a quoted field, a unescaped quote is encountered inside a quoted field, or the last fields of a file is quoted and doesn't contain the terminating quote character.
+.TP
+\fB-d\fR, \fB--delimiter\fR=\fIDELIM\fR
+Use \fIDELIM\fP instead of the comma character as the delimiter character
+.TP
+\fB-q\fR, \fB--quote\fR=\fIQUOTE\fR
+Use \fIQUOTE\fR instead of double quote as the quote character
+.TP
+\fB--help\fR
+Display a help message and exit
+.TP
+\fB--version\fR
+Print version information to stderr and exit
+
+.SH AUTHOR
+Written by Robert Gamble.
+
+.SH BUGS
+Please send questions, comments, bugs, etc. to: rgamble@sourceforge.net
+
+.SH COPYRIGHT
+.nf
+Copyright © 2007 Robert Gamble
+.fi
+This is free software.  You may redistribute copies of it under the terms of the
+GNU General Public License <http://www.gnu.org/licenses/gpl.html>.  There is NO
+WARRANTY, to the extent permitted by law.
+
+.SH SEE ALSO
+csvcount(1), csvcheck(1), csvfix(1), csvcut(1), csvgrep(1), csvbreak(1)
+

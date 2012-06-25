@@ -1,0 +1,77 @@
+.TH CSVBREAK "1" "02 June 2007" "" "csvutils"
+.SH NAME
+csvbreak \- break a CSV file into multiple files based on the specified field
+.SH SYNOPSIS
+.nf
+.ft B
+csvbreak -f FIELD [OPTION]... [FILE]
+.LP
+.fi
+.SH DESCRIPTION
+.ft
+.ft
+.fi
+Read CSV data from standard input or \fIFILE\fR and break the data into multiple files based on the value
+of the provided \fIFIELD\fR.
+As each record is read it will be printed to a file whose name is composed of an optional prefix, the value
+of the specified field for that record, and an optional suffix, .csv by default.  If the value of the break
+field contains a null character it will be truncated in the filename, any other characters in the break
+field will be used in the filename including characters that may be used as a directory seperator on your
+operating system, keep this in mind.  Systems that disallow certain characters in a filename may cause
+csvbreak to fail if these characters are present in the break field.
+.TP
+\fB-c\fR, \fB--print-counts\fR
+don't create break files, just display the distinct values of the break field
+and the number of occurences in the file of each value
+.TP
+\fB-d\fR, \fB--delimiter\fR=\fIDELIM\fR
+Use \fIDELIM\fP instead of the comma character as the delimiter character
+.TP
+\fB-f\fR, \fB--field\fR=\fIFIELD\fR
+field name or number to break on.  fields may be specified by number starting at 1 or by field name.  
+A field name must contain at least one non-digit character.  When using field names it is assumed that
+the first non-empty record contains a header with field names that match the names used in the field 
+list, if any field names cannot be resolved from the first record an error will occur.
+.TP        
+\fB-h\fR, \fB--header\fR
+print the header record to each file created, this option is implied when -f is provided with a field
+name instead of number.
+.TP
+\fB-r\fR, \fB--remove-break-field\fR
+do not print the break field to created files
+.TP
+\fB-s\fR, \fB--strict\fR
+enforce strict mode, mal-formed CSV files will cause an error
+.TP
+\fB-q\fR, \fB--quote\fR=\fIQUOTE\fR
+Use \fIQUOTE\fR instead of double quote as the quote character
+.TP
+\fB-S\fR, \fB--suffix\fR
+the suffix to use for the created files, the default is .csv
+.TP        
+\fB-P\fR, \fB--prefix\fR
+the prefix to use for the created files
+.TP
+\fB--help\fR
+Display a help message and exit
+.TP
+\fB--version\fR
+Print version information to stderr and exit
+
+.SH AUTHOR
+Written by Robert Gamble.
+
+.SH BUGS
+Please send questions, comments, bugs, etc. to: rgamble@sourceforge.net
+
+.SH COPYRIGHT
+.nf
+Copyright © 2007 Robert Gamble
+.fi
+This is free software.  You may redistribute copies of it under the terms of the
+GNU General Public License <http://www.gnu.org/licenses/gpl.html>.  There is NO
+WARRANTY, to the extent permitted by law.
+
+.SH SEE ALSO
+csvcount(1), csvcheck(1), csvfix(1), csvcut(1), csvgrep(1), csvbreak(1)
+

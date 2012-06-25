@@ -1,0 +1,50 @@
+.TH CSVFIX "1" "02 June 2007" "" "csvutils"
+.SH NAME
+csvfix \- fix malformed CSV data and change data format
+.SH SYNOPSIS
+.nf
+.ft B
+csvfix [OPTION]... [FILE1] [FILE2]
+.LP
+.fi
+.SH DESCRIPTION
+.ft
+.ft
+.fi
+Read in (possibly malformed) data from \fIFILE1\fR or standard input and output properly formed CSV to \fIFILE2\fR or standard output.  csvfix can be used to change the format of a CSV file by specifying output quote and delimiter options.
+.TP
+\fB-d\fR, \fB--delimiter\fR=\fIDELIM\fR
+Use \fIDELIM\fP instead of the comma character as the delimiter character
+.TP
+\fB-q\fR, \fB--quote\fR=\fIQUOTE\fR
+Use \fIQUOTE\fR instead of double quote as the quote character
+.TP
+\fB--output-delimiter\fR=\fIDELIM\fR
+Use \fIDELIM\fR as the output delimiter instead of comma
+.TP
+\fB--output-quote\fR=\fIQUOTE_CHAR \fR
+Use \fIQUOTE_CHAR\fR as the output quote character instead of double quote
+.TP
+\fB--help\fR
+Display a help message and exit
+.TP
+\fB--version\fR
+Print version information to stderr and exit
+
+.SH AUTHOR
+Written by Robert Gamble.
+
+.SH BUGS
+Please send questions, comments, bugs, etc. to: rgamble@sourceforge.net
+
+.SH COPYRIGHT
+.nf
+Copyright © 2007 Robert Gamble
+.fi
+This is free software.  You may redistribute copies of it under the terms of the
+GNU General Public License <http://www.gnu.org/licenses/gpl.html>.  There is NO
+WARRANTY, to the extent permitted by law.
+
+.SH SEE ALSO
+csvcount(1), csvcheck(1), csvfix(1), csvcut(1), csvgrep(1), csvbreak(1)
+

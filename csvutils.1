@@ -1,0 +1,51 @@
+.TH CSVUTILS "1" "16 June 2007" "csvutils 0.9.1" "csvutils"
+.SH NAME
+csvutils \- a set of utilities for managing CSV data
+.SH SYNOPSIS
+.nf
+.ft B
+csvcount [OPTION]... [FILE]...
+csvcheck [OPTION]... [FILE]...
+csvfix [OPTION]... [FILE1] [FILE2]
+csvcut [OPTION]... [FILE]...
+csvgrep [OPTION]... PATTERN [FILE]...
+csvbreak -f FIELD [OPTION]... [FILE]
+.LP
+.fi
+.SH DESCRIPTION
+.ft
+.ft
+.fi
+csvutils provides a set of program for retieving information from, and manipulating,
+CSV data.  The current version includes the following programs, see the man pages for
+the individual programs for details.
+.nf
+.ft B
+
+csvcount \- print the number of fields and rows in a CSV file
+csvcheck \- check CSV files for malformed data
+csvfix   \- fix malformed CSV data and change data format
+csvcut   \- print selected fields from CSV files
+csvgrep  \- print selected fields from CSV files
+csvbreak \- break a CSV file into multiple files based on the specified field
+
+All programs that produce CSV data output only well-formed data regardless of
+their input and all output fields are quoted.
+
+.SH AUTHOR
+Written by Robert Gamble.
+
+.SH BUGS
+Please send questions, comments, bugs, etc. to: rgamble@sourceforge.net
+
+.SH COPYRIGHT
+.nf
+Copyright © 2007 Robert Gamble
+.fi
+This is free software.  You may redistribute copies of it under the terms of the
+GNU General Public License <http://www.gnu.org/licenses/gpl.html>.  There is NO
+WARRANTY, to the extent permitted by law.
+
+.SH SEE ALSO
+csvcount(1), csvcheck(1), csvfix(1), csvcut(1), csvgrep(1), csvbreak(1)
+
